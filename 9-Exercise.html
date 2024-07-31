@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>9-Exercise</title>
+</head>
+<body>
+  
+  <button>9a</button>
+  <button class="nineB">9b</button>
+
+  <button class="headButton" onclick="
+    resultSpace.innerHTML = 'You chose: heads';
+  ">heads</button>
+
+  <button class="tailButton" onclick="
+    resultSpace.innerHTML = 'You chose: tails';
+  ">tails</button>
+
+  <p class="result"></p>
+
+  <input class="textValue" onkeydown="
+    if (event.key === 'Enter') {
+      runText();
+    }
+  "> 
+  
+  <button class="submitButton" onclick="
+    runText();
+  ">Submit</button>
+
+  <p class="isName"></p>
+
+
+  <script>
+    console.log(document.querySelector('button'));
+
+    document.querySelector('.nineB')
+    .innerHTML = '9b done!';
+
+    let resultSpace = document.querySelector('.result');
+
+    function runText() {
+      let textInside = document.querySelector('.textValue').value;
+      document.querySelector('.isName').innerHTML = `Your name is: ${textInside}`;
+      console.log(`Your name is: ${textInside}`)
+    }
+
+    
+    
+
+
+
+
+
+  </script>
+</body>
+</html>

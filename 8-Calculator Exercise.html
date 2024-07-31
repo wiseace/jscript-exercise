@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+</head>
+<body>
+    
+    <p>
+        <button onclick="
+            updateCalculation(1);
+        ">1</button>
+
+        <button onclick="
+            updateCalculation(2);
+        ">2</button>
+
+        <button onclick="
+            updateCalculation(3);
+        ">3</button>
+
+        <button onclick="
+            updateCalculation('+');
+        ">+</button>
+
+    </p>
+    <p>
+        <button onclick="
+            updateCalculation(4);
+        ">4</button>
+
+        <button onclick="
+            updateCalculation(5);
+        ">5</button>
+
+        <button onclick="
+            updateCalculation(6);
+        ">6</button>
+
+        <button onclick="
+            updateCalculation('-');
+        ">-</button>
+    </p>
+    <p>
+        <button onclick="
+        updateCalculation(7);
+    ">7</button>
+
+    <button onclick="
+        updateCalculation(8);
+    ">8</button>
+
+    <button onclick="
+        updateCalculation(9);
+    ">9</button>
+
+    <button onclick="
+        updateCalculation('*');
+    ">*</button>
+    </p>
+
+    <p>
+        <button onclick="
+        updateCalculation(0);
+    ">0</button>
+
+    <button onclick="
+        updateCalculation('.');
+    ">.</button>
+
+    <button onclick="
+    updateCalculation('=');
+    ">=</button>
+
+    <button onclick="
+        updateCalculation('/');
+    ">/</button>
+    </p>
+
+    <p>
+    <button onclick="
+    updateCalculation('clear');
+    calculation = '';
+    ">clear</button>
+    </p>
+    
+    <!-- Javascript Function defined below -->
+    <script>
+        
+        
+        let result = 0;
+        let calculation = JSON.parse(localStorage.getItem('result'));
+        
+        function updateCalculation(value) {
+           
+            if (value === 1) {
+                calculation += '1';
+                console.log(calculation);
+
+           } else if (value === 2) {
+                calculation += '2';
+                console.log(calculation);
+
+            } else if (value === 3) {
+                calculation += '3';
+                console.log(calculation);
+
+             } else if (value === 4) {
+                calculation += '4';
+                console.log(calculation);
+            
+            } else if (value === 5) {
+                calculation += '5';
+                console.log(calculation);
+            
+            } else if (value === 6) {
+                calculation += '6';
+                console.log(calculation);
+            
+            }  else if (value === 7) {
+                calculation += '7';
+                console.log(calculation);
+
+            } else if (value === 8) {
+                calculation += '8';
+                console.log(calculation);
+
+            } else if (value === 9) {
+                calculation += '9';
+                console.log(calculation);
+            
+            } else if (value === 0) {
+                calculation += '0';
+                console.log(calculation);
+            
+            } else if (value === '+') {
+                calculation += ' + ';
+                console.log(calculation);
+
+            } else if (value === '-') {
+                calculation += ' - ';
+                console.log(calculation);
+            
+            } else if (value === '/') {
+                calculation += ' / ';
+                console.log(calculation);
+
+            } else if (value === '.') {
+                calculation += '.';
+                console.log(calculation);
+
+            } else if (value === '*') {
+                calculation += ' * ';
+                console.log(calculation);
+
+            } else if (value === '=') {
+                result = eval(calculation);
+                console.log(result);
+
+            
+            } else if (value === 'clear') {
+                localStorage.removeItem('result');
+                console.log('cleared.');
+                calculation = '';
+                
+            }
+                localStorage.setItem('result', JSON.stringify(result));
+               
+        }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DOM</title>
+</head>
+<body>
+    <button class="js-subscribe"
+    onclick="
+      const buttonElement = document.querySelector('.js-subscribe');
+      
+      if (buttonElement.innerHTML === 'Subscribe') {
+        buttonElement.innerHTML = 'Subscribed';
+      
+      } else {
+        buttonElement.innerHTML = 'Subscribe';
+      }
+    ">Subscribe</button>
+
+    <p>Amazon Shipping Calculator</p>
+    <p>Orders under $40 = +$10 shipping.</p>
+    <p>Orders over $40 = FREE shipping.</p>
+
+    <input 
+    placeholder="Cost of order" 
+    class="costInput" 
+    onkeydown="keyDownTotal();
+    ">
+
+    <button onclick="
+      calculateTotal();
+    ">Calculate</button>
+
+    <p class="costTotal"></p>
+
+    <input onkeyup="
+      keyUpTotal();
+    " class="anyThing" placeholder="Type something">
+
+      <p class="type-result"></p>
+
+  <script>
+
+        let finalDisplay = document.querySelector('.type-result');
+
+        function keyUpTotal() {
+          if (event.key.match(/[a-z]/i)) {
+            finalDisplay.innerHTML = document.querySelector('.anyThing').value;
+          }
+        }
+
+
+        function keyDownTotal() {
+          if (event.key === 'Enter') {
+              calculateTotal();
+          };
+        }
+
+        function calculateTotal() {
+          const orderCost = document.querySelector('.costInput');
+          let cost = Number(orderCost.value);
+
+            if (cost < 40) {
+                cost = cost + 10;
+            } else if (cost > 40) {
+                cost;
+            }
+
+            document.querySelector('.costTotal')
+            .innerHTML = `$${cost}`;
+        }
+    
+
+
+
+
+
+
+    // document.body.innerHTML;
+
+    // const newButton = document.querySelector('button').innerHTML;
+    // console.log(newButton);
+
+
+  </script>
+</body>
+</html>

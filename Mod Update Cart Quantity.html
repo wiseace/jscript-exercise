@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Cart Quantity</title>
+  </head>
+  <body>
+    <button onclick="
+      showQuantity();
+    ">Show Quantity</button>
+
+    <button onclick="
+      updateCartQuantity(1);
+    ">Add to Cart</button>
+
+    <button onclick="
+      updateCartQuantity(2);
+    ">+2</button>
+
+    <button onclick="
+      updateCartQuantity(3);
+    ">+3</button>
+
+    <button onclick="
+      updateCartQuantity(4);
+    ">+4</button>
+
+    <button onclick="
+      updateCartQuantity(5);
+    ">+5</button>
+
+    <button onclick="
+      updateCartQuantity(-1);
+    ">Remove from cart</button>
+
+    <button onclick="
+      updateCartQuantity(-2);
+    ">-2</button>
+
+    <button onclick="
+      updateCartQuantity(-3);
+    ">-3</button>
+
+    <button onclick="
+      resetCart();
+    ">Reset Cart</button>
+
+    <p onload="
+        loadedResult();
+    " class="mainResult"></p>
+
+    <script>
+      let cartQuantity = JSON.parse(localStorage.getItem('saveResult'));
+
+
+      function updateCartQuantity(change) {
+        if (cartQuantity + change > 10) {
+          alert('The cart is full');
+          return;
+        }
+
+        if (cartQuantity + change < 0) {
+          alert('Not enough items in the cart');
+          return;
+        }
+
+        cartQuantity += change;
+        console.log(`Cart quantity: ${cartQuantity}`);
+
+        let majorResult = document.querySelector('.mainResult');
+        majorResult.innerHTML = `Cart quantity: ${cartQuantity}`;
+
+        localStorage.setItem('saveResult', JSON.stringify(cartQuantity));
+      }
+
+      function showQuantity() {
+      let majorResult = document.querySelector('.mainResult');
+        majorResult.innerHTML = `Cart quantity: ${cartQuantity}`;
+      }
+
+      function loadedResult() {
+        majorResult.innerHTML = `Cart Quantity: ${cartQuantity}`;
+      }
+
+      function resetCart() {
+        cartQuantity = 0;
+        localStorage.setItem('saveResult', JSON.stringify(cartQuantity));
+        let majorResult = document.querySelector('.mainResult');
+        majorResult.innerHTML = `Cart quantity: ${cartQuantity}`;
+        cartQuantity = JSON.parse(localStorage.getItem('saveResult'));
+      }
+    </script>
+  </body>
+</html>
