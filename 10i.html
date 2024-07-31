@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="styles/10i-calculator.css">
+  </head>
+  <body>
+    <!-- Create an element to display the calculation. -->
+    <p class="js-calculation result-display"></p>
+
+    <p>
+      <button onclick="
+        updateCalculation('1');
+      " class="num-clear">1</button>
+
+      <button onclick="
+        updateCalculation('2');
+      " class="num-clear">2</button>
+
+      <button onclick="
+        updateCalculation('3');
+      " class="num-clear">3</button>
+
+      <button onclick="
+        updateCalculation(' + ');
+      " class="symbols">+</button>
+    </p>
+
+    <p>
+      <button onclick="
+        updateCalculation('4');
+      " class="num-clear">4</button>
+
+      <button onclick="
+        updateCalculation('5');
+      " class="num-clear">5</button>
+
+      <button onclick="
+        updateCalculation('6');
+      " class="num-clear">6</button>
+
+      <button onclick="
+        updateCalculation(' - ');
+      " class="symbols">-</button>
+    </p>
+
+    <p>
+      <button onclick="
+        updateCalculation('7');
+      " class="num-clear">7</button>
+
+      <button onclick="
+        updateCalculation('8');
+      " class="num-clear">8</button>
+
+      <button onclick="
+        updateCalculation('9');
+      " class="num-clear">9</button>
+
+      <button onclick="
+        updateCalculation(' * ');
+      " class="symbols">*</button>
+    </p>
+
+    <p>
+      <button onclick="
+        updateCalculation('0');
+      " class="num-clear">0</button>
+
+      <button onclick="
+        updateCalculation('.');
+      " class="num-clear">.</button>
+
+      <button onclick="
+        // Note: eval() takes a string and runs it as code.
+        // Avoid using eval() in real world projects since
+        // it can potentially be given harmful code to run.
+        // Only use eval() for learning purposes.
+        calculation = eval(calculation);
+
+        // Display the calculation on the page
+        // instead of console.log
+        displayCalculation();
+
+        localStorage.setItem('calculation', calculation);
+      " class="num-clear">=</button>
+
+      <button onclick="
+        updateCalculation(' / ');
+      " class="symbols">/</button>
+    </p>
+
+    <p>
+      <button onclick="
+        calculation = '';
+
+        // Display the calculation on the page
+        // instead of console.log
+        displayCalculation();
+
+        localStorage.setItem('calculation', calculation);
+      " class="num-clear clear-font">Clear</button>
+    </p>
+
+    <script src="scripts/10i-calculator.js"></script>
+  </body>
+</html>

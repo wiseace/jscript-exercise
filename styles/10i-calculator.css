@@ -1,0 +1,39 @@
+body {
+  background-color: black;
+}
+
+.num-clear {
+  font-family: Arial;
+  color: white;
+  background-color: rgb(51, 51, 51);
+  height: 70px;
+  width: 70px;
+  font-size: 26px;
+  border: none;
+  border-radius: 50%;
+  margin: 0 5px;
+}
+
+.result-display {
+  color: white;
+  font-family: Arial;
+  font-size: 45px;
+  margin: 15px 0;
+  margin: 0 5px;
+}
+
+.clear-font {
+  font-size: 16px;
+}
+
+.symbols {
+  font-family: Arial;
+  color: white;
+  background-color: rgb(254, 160, 10);
+  height: 70px;
+  width: 70px;
+  font-size: 26px;
+  border: none;
+  border-radius: 50%;
+  margin: 0 5px;
+}
